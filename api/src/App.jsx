@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// Import từ thư mục cùng cấp với src nên dùng ../
 import { getUsers, createUser, deleteUser } from '../components/api';
 
 function App() {

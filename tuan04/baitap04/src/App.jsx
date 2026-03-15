@@ -7,26 +7,38 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // useEffect(()=>{
-  //   fetch("https://jsonplaceholder.typicode.com/posts")
-  //   .then(res => res.json())
-  //   .then(data => {setGoc(data); setSauLoc(data)})
+  // useEffect(() => {
+  //   axios.get("https://jsonplaceholder.typicode.com/posts")
+  //   .then((res) => {
+  //     setPosts(res.data);
+  //     setLoading(false);
+  //   })
+  //   .catch((err) => {
+  //     setError("Lỗi tải dữ liệu");
+  //     setLoading(false);
+  //   })
+  // },[])
 
-  // }, [])
+fetch("https://jsonplaceholder.typicode.com/posts")
+      .then(res => res.json())
+      .then(data => {
+         setPosts(data);
+         setLoading(false);
+      })
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-        setPosts(res.data);
-      } catch (err) {
-        setError("Không tìm thấy!");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchPosts();
-  }, []);
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     try {
+  //       const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+  //       setPosts(res.data);
+  //     } catch (err) {
+  //       setError("Không tìm thấy!");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchPosts();
+  // }, []);
   const filteredPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(search.toLowerCase())
   );

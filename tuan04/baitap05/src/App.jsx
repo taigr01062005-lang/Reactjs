@@ -35,7 +35,12 @@ const App = () => {
         completed: false,
         userId: 1
       });
-      setTodos([res.data, ...todos]); 
+      const newTodoWithUniqueId = {
+      ...res.data,
+      id: Date.now() // Dùng timestamp để ID luôn là duy nhất
+    };
+
+    setTodos([newTodoWithUniqueId, ...todos]);
       setNewTitle("");
     } catch (err) {
       alert("Thêm mới thất bại!");

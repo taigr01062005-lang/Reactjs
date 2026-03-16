@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import data from '../../baitap04.1/public/data.json'
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -7,17 +8,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
 useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const res = await axios.get("https://jsonplaceholder.typicode.com/posts?_limit=50");
-        setPosts(res.data);
-      } catch (err) {
-        setError("Không tìm thấy!");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchPosts();
+    setPosts(data)
   }, []);
   const filteredPosts = selectedCategory === "all" ? posts 
     : posts.filter(post => post.userId === parseInt(selectedCategory));
@@ -37,8 +28,8 @@ useEffect(() => {
           <option value="1">User 1</option>
           <option value="2">User 2</option>
           <option value="3">User 3</option>
-          <option value="4">User 4</option>
-          <option value="5">User 5</option>
+          {/* <option value="4">User 4</option>
+          <option value="5">User 5</option> */}
         </select>
       </div>
 

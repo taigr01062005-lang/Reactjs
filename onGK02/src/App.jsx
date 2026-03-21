@@ -12,7 +12,7 @@ function App() {
   const inputRef = useRef(null);
 
   // Gọi Custom Hook
-  const { data, loading, error } = useFetchData(url);
+  const { data, loading, error } = useFetchData(inputData);
 
   useEffect(() => {
     if (!loading && inputRef.current) {

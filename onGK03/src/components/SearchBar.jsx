@@ -1,13 +1,13 @@
 import React from "react";
 
-const SearchBar = ({onChange, inputRef}) => {
+const SearchBar = ({onChange, inputRed}) => {
     return(
-        <div style={{display:'flex', justifyContent: 'center', height: '30px', padding:'20px'}}>
+        <div>
             <input type="text"
-                   ref = {inputRef}
-                   placeholder="Search"
-                   onChange = {(e) => {onChange(e.target.value)}}
-            />
+                ref = {inputRed}
+                placeholder="Search"
+                onChange={(e)=> onChange(e.target.value)}
+                    />
         </div>
     )
 }

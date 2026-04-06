@@ -1,16 +1,16 @@
 import React from 'react';
 import { useSetRecoilState } from 'recoil';
-import { countState } from '../atom/atom';
+import { countState } from '../atom/CounterState';
 
 const ComponentB = () => {
-  const setCount = useSetRecoilState(countState);
+  const setCount = useSetRecoilState(counterState);
 
   return (
     <div>
       <h3>Component B (Actions)</h3>
       <button onClick={() => setCount((old) => old + 1)}>Tăng</button>
       <button onClick={() => setCount((old) => old - 1)} style={{ marginLeft: '10px' }}>Giảm</button>
-      <button onClick={() => setCount(countState)} style={{ marginLeft: '10px' }}>Reset</button>
+      <button onClick={() => setCount(counterState)} style={{ marginLeft: '10px' }}>Reset</button>
     </div>
   );
 };

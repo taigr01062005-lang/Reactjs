@@ -1,7 +1,6 @@
 
 import { atom } from 'recoil';
 
-// Effect giúp lưu và lấy dữ liệu từ localStorage
 const localStorageEffect = key => ({ setSelf, onSet }) => {
   const savedValue = localStorage.getItem(key);
   if (savedValue != null) {
@@ -17,6 +16,6 @@ const localStorageEffect = key => ({ setSelf, onSet }) => {
 
 export const themeState = atom({
   key: 'themeState',
-  default: 'light', // Giá trị mặc định
+  default: 'light',
   effects: [localStorageEffect('app_theme')], 
 });

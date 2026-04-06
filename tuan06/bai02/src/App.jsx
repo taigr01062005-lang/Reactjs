@@ -1,7 +1,7 @@
 import React from 'react';
 import { RecoilRoot, useRecoilValue } from 'recoil';
-import { themeState } from './store/themeStore';
-import ThemeToggler from './ThemeToggler';
+import { themeState } from '../recoil/ThemeStorage';
+import ThemeToggler from '../components/ThemeToggler';
 import './App.css';
 
 function App() {
@@ -16,3 +16,4 @@ function App() {
       </div>
   );
 }
+export default App;

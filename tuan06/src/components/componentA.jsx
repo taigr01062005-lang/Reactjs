@@ -1,0 +1,16 @@
+import React from 'react';
+import { useRecoilValue } from 'recoil';
+import { countState } from '../atom/atom';
+
+const ComponentA = () => {
+  const count = useRecoilValue(countState);
+
+  return (
+    <div>
+      <h3>Component A (Display)</h3>
+      <p>Giá trị hiện tại: <strong>{count}</strong></p>
+    </div>
+  );
+};
+
+export default ComponentA;

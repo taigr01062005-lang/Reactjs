@@ -1,6 +1,6 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
-import ComponentA from './components/componentA';
+import ComponentA from './components/ComponentA';
 import ComponentB from './components/componentB';
 
 function App() {

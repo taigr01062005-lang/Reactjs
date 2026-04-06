@@ -1,10 +1,10 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
-import { countState } from '../atom/CounterState';
+import { counterState } from '../atom/CounterState';
 
 const ComponentA = () => {
   const count = useRecoilValue(counterState);
-
+  
   return (
     <div>
       <h3>Component A (Display)</h3>
